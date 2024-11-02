@@ -2,15 +2,17 @@ package ru.dyankovskaya.university.entity;
 
 public class University {
 
-    public String name;
-    public Professor professor;
-    public Student student;
+    private String name;
+    private Professor professor;
+    private Student student;
+    private Student student2;
+    private Student student3;
 
     public University() {
 
     }
 
-    public University(String name, Professor professor, Student student){
+    public University(String name, Professor professor, Student student) {
         this.name = name;
         this.professor = professor;
         this.student = student;
@@ -39,5 +41,4 @@ public class University {
     public void setStudent(Student student) {
         this.student = student;
     }
-
 }

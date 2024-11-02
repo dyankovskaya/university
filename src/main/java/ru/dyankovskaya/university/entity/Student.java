@@ -1,23 +1,24 @@
 package ru.dyankovskaya.university.entity;
 
-import ru.dyankovskaya.university.service.Attend;
+import ru.dyankovskaya.university.service.Attendance;
 import ru.dyankovskaya.university.service.Study;
 
-public class Student implements Study, Attend {
+public class Student implements Study, Attendance {
 
-    public String name;
-    public University university;
-    public String faculty;
-    public Professor professor;
+    private String name;
+    private University university;
+    private String faculty;
+    private Professor professor;
 
     public Student() {
 
     }
 
-    public Student(String name, University university, String faculty) {
+    public Student(String name, University university, String faculty, Professor professor) {
         this.name = name;
         this.university = university;
         this.faculty = faculty;
+        this.professor = professor;
     }
 
     public String getName() {
@@ -54,11 +55,13 @@ public class Student implements Study, Attend {
 
     @Override
     public void study() {
-        System.out.println("Я обучаюсь в " + university.name);
+        System.out.println("Я обучаюсь в " + university.getName() + ". Моя специальность - " + getFaculty()
+                + ". Высшую математику у меня преподает " + professor.getName());
     }
 
     @Override
-    public void attend() {
-        System.out.println("Я хожу в универ!");
+    public void attendance() {
+        System.out.println("Привет! Я студент " + getName());
+        System.out.println("Я хожу в универ каждый день.");
     }
 }
